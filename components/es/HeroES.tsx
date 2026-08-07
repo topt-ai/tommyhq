@@ -113,7 +113,7 @@ type Query = { text: string; city: string; rank: number; stats: [Stat, Stat] };
 
 const QUERIES: Query[] = [
   {
-    text: 'techador en san salvador',
+    text: 'abogado en san salvador',
     city: 'San Salvador, SV',
     rank: 2,
     stats: [
