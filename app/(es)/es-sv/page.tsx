@@ -5,6 +5,7 @@ import { ServicesES } from '@/components/es/ServicesES';
 import { AISearchES } from '@/components/es/AISearchES';
 import { SystemDiagramES } from '@/components/es/SystemDiagramES';
 import { WorkES } from '@/components/es/WorkES';
+import { ProjectsES } from '@/components/es/ProjectsES';
 import { AboutES } from '@/components/es/AboutES';
 import { ProcessES } from '@/components/es/ProcessES';
 import { WhyUsES } from '@/components/es/WhyUsES';
@@ -22,6 +23,7 @@ export default function HomeES() {
       <AISearchES />
       <SystemDiagramES />
       <WorkES />
+      <ProjectsES />
       <AboutES />
       <ProcessES />
       <WhyUsES />
