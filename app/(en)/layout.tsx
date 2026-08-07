@@ -14,6 +14,10 @@ export const metadata: Metadata = {
       'x-default': '/',
     },
   },
+  icons: {
+    icon: '/favicon.svg',
+    apple: '/favicon.svg',
+  },
 };
 
 export default function RootLayout({

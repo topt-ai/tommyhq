@@ -61,7 +61,7 @@ export function Services() {
             What we build
           </div>
           <h2 className="font-display font-normal text-brand-primary text-[48px] leading-tight">
-            Three services.<br />No filler.
+            Three services.
           </h2>
         </div>
 
@@ -221,7 +221,7 @@ function TypewriterEffect() {
         <div className="font-mono text-[10px] uppercase text-[#4ADE80]">Live</div>
       </div>
 
-      <div className="font-mono text-[13px] text-brand-accent leading-relaxed flex flex-col pt-1">
+      <div className="font-mono text-[13px] text-brand-accent leading-relaxed flex flex-col pt-1 pr-16">
         {visibleLines.map((line, i) => (
           <div key={i}>{line}</div>
         ))}
