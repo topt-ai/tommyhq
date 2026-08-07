@@ -30,6 +30,10 @@ const EMPTY: FormState = {
 const WEBHOOK_URL =
   'https://tommy-1.app.n8n.cloud/webhook/54de26e0-f0eb-4eae-a2a5-5a94d730eb04';
 
+const WHATSAPP_URL =
+  'https://wa.me/50372018215?text=' +
+  encodeURIComponent('Hola, quiero más información sobre TommyHQ');
+
 const FORMS: Record<FormKey, { label: string; submissionType: string; subcopy: string }> = {
   default: {
     label: 'General',
@@ -244,6 +248,23 @@ export function ContactES() {
             </span>
             <a href="mailto:hola@tommyhq.com" className="font-sans font-normal text-[14px] text-brand-accent hover:underline transition-all">
               hola@tommyhq.com
+            </a>
+          </div>
+
+          <div className="mt-6 pt-6 border-t border-brand-border/40 flex flex-col items-center gap-3">
+            <span className="font-sans font-light text-[14px] text-brand-muted">
+              ¿Prefieres escribirnos directo? Contáctanos por WhatsApp
+            </span>
+            <a
+              href={WHATSAPP_URL}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-border text-brand-primary font-sans font-medium text-[13px] px-[20px] py-[10px] transition-all duration-250 hover:border-[#2A2A2A] cursor-pointer"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="#4ADE80" aria-hidden="true">
+                <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.83 14.13c-.25.7-1.24 1.28-2.03 1.45-.54.11-1.25.2-3.63-.78-3.05-1.26-5.01-4.36-5.16-4.56-.15-.2-1.23-1.64-1.23-3.13s.77-2.22 1.05-2.52c.25-.28.62-.4.99-.4.12 0 .23 0 .32.01.28.01.42-.02.65.5.28.63.95 2.16 1.03 2.32.08.16.13.35.03.56-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.15 1.37 2.46 1.52.31.15.49.13.67-.08.18-.2.77-.9.98-1.21.2-.3.4-.25.68-.15.28.1 1.79.85 2.1 1.01.31.15.51.23.59.36.08.13.08.75-.17 1.45Z" />
+              </svg>
+              Escríbenos por WhatsApp
             </a>
           </div>
         </div>

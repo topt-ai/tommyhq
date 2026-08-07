@@ -32,6 +32,18 @@ export function FooterES() {
       </div>
 
       <div className="border-t border-brand-border">
+        <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-4 text-center md:text-left">
+          <address className="font-sans font-light text-[12px] text-brand-muted not-italic leading-relaxed">
+            <div className="text-brand-primary font-medium">TommyHQ</div>
+            <div>Century Tower, San Salvador, El Salvador</div>
+            <a href="tel:+50372018215" className="hover:text-brand-primary transition-colors">
+              +503 7201 8215
+            </a>
+          </address>
+        </div>
+      </div>
+
+      <div className="border-t border-brand-border">
         <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center gap-2">
           <div className="font-sans font-light text-[12px] text-brand-muted">
             Todos los derechos reservados &middot; 2025
