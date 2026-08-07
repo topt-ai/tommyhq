@@ -6,11 +6,12 @@ export function LocalBusinessSchema() {
     "@id": "https://tommyhq.com/es-sv/#organization",
     "name": "TommyHQ",
     "url": "https://tommyhq.com/es-sv/",
-    "telephone": "+503XXXXXXXX", // TODO: NAP real de El Salvador
+    "telephone": "+50372018215",
     "email": "hola@tommyhq.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",
+      "streetAddress": "Century Tower",
       "addressLocality": "San Salvador",
       "addressRegion": "SS",
       "addressCountry": "SV"
@@ -23,7 +24,15 @@ export function LocalBusinessSchema() {
     "areaServed": {
       "@type": "City",
       "name": "San Salvador"
-    }
+    },
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ]
   };
 
   return (
