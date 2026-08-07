@@ -1,27 +1,57 @@
 'use client';
 
-import { motion, useScroll, useTransform } from 'motion/react';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
+import gsap from 'gsap';
+import ScrollTrigger from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 
 export function BrandMoment() {
-  const ref = useRef<HTMLDivElement>(null);
-  const { scrollYProgress } = useScroll({
-    target: ref,
-    offset: ["start end", "center center"]
-  });
+  const sectionRef = useRef<HTMLElement>(null);
+  const wordRef = useRef<HTMLDivElement>(null);
 
-  const opacity = useTransform(scrollYProgress, [0, 0.5, 1], [0, 0.3, 1]);
-  const scale = useTransform(scrollYProgress, [0, 1], [0.9, 1]);
-  const color = useTransform(scrollYProgress, [0.8, 1], ["#888888", "#f5f5f5"]);
+  useEffect(() => {
+    if (!sectionRef.current || !wordRef.current) return;
+
+    const ctx = gsap.context(() => {
+      gsap.fromTo(
+        wordRef.current,
+        { color: '#141414' },
+        {
+          color: '#F5F0EE',
+          ease: 'none',
+          scrollTrigger: {
+            trigger: sectionRef.current,
+            start: 'top 80%',
+            end: 'top 20%',
+            scrub: true,
+          },
+        }
+      );
+    }, sectionRef);
+
+    return () => ctx.revert();
+  }, []);
 
   return (
-    <section ref={ref} className="h-[60vh] flex items-center justify-center bg-brand-bg relative overflow-hidden">
-      <motion.h2 
-        style={{ opacity, scale, color }}
-        className="font-serif text-5xl md:text-7xl lg:text-9xl text-center px-6 max-w-6xl mx-auto leading-none"
+    <section
+      ref={sectionRef}
+      className="w-full flex items-center justify-center overflow-hidden"
+      style={{ backgroundColor: '#0A0A0A', height: '60vh' }}
+    >
+      <div
+        ref={wordRef}
+        className="px-6 text-center font-brand"
+        style={{
+          fontWeight: 700,
+          fontSize: 'clamp(44px, 9vw, 128px)',
+          letterSpacing: '-0.01em',
+          color: '#141414',
+          lineHeight: 1.05,
+        }}
       >
-        Be impossible to miss.
-      </motion.h2>
+        Be impossible<br />to miss.
+      </div>
     </section>
   );
 }

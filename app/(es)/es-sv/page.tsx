@@ -2,6 +2,8 @@ import { NavbarES } from '@/components/es/NavbarES';
 import { HeroES } from '@/components/es/HeroES';
 import { BrandMomentES } from '@/components/es/BrandMomentES';
 import { ServicesES } from '@/components/es/ServicesES';
+import { AISearchES } from '@/components/es/AISearchES';
+import { SystemDiagramES } from '@/components/es/SystemDiagramES';
 import { WorkES } from '@/components/es/WorkES';
 import { AboutES } from '@/components/es/AboutES';
 import { ProcessES } from '@/components/es/ProcessES';
@@ -17,6 +19,8 @@ export default function HomeES() {
       <HeroES />
       <BrandMomentES />
       <ServicesES />
+      <AISearchES />
+      <SystemDiagramES />
       <WorkES />
       <AboutES />
       <ProcessES />

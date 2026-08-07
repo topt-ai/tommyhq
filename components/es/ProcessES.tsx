@@ -1,50 +1,54 @@
-'use client';
-
-import { motion } from 'motion/react';
-
 export function ProcessES() {
-  const steps = [
-    {
-      num: "01",
-      title: "Hablamos",
-      desc: "Una sola llamada. Nos cuentas qué falla o qué falta. Te decimos qué construiríamos y cuánto costaría."
-    },
-    {
-      num: "02",
-      title: "Construimos",
-      desc: "Entrega rápida. Recibes una web o sistema funcional, no una presentación de bocetos con un cronograma de tres meses."
-    },
-    {
-      num: "03",
-      title: "Funciona",
-      desc: "Después de la entrega, tu sitio posiciona y tus sistemas operan solos. Tú no los administras. Ese es el punto."
-    }
-  ];
-
   return (
-    <section className="py-32 px-6 max-w-7xl mx-auto">
-      <div className="mb-20 text-center">
-        <p className="font-mono text-sm tracking-widest uppercase text-brand-accent mb-4">El Proceso</p>
-        <h2 className="font-serif text-4xl md:text-6xl">Simple desde el primer día.</h2>
-      </div>
+    <section className="bg-brand-bg py-[120px]">
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12">
 
-      <div className="grid md:grid-cols-3 gap-8">
-        {steps.map((step, idx) => (
-          <motion.div 
-            key={step.num}
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ delay: idx * 0.15 }}
-            className="p-8 border-l border-brand-border"
-          >
-            <div className="font-mono text-brand-accent text-lg mb-6">{step.num}</div>
-            <h3 className="font-serif text-3xl mb-4">{step.title}</h3>
-            <p className="text-brand-muted leading-relaxed">
-              {step.desc}
+        <div className="mb-16 GSAP-reveal" data-reveal>
+          <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-brand-accent mb-4">
+            El proceso
+          </div>
+          <h2 className="font-display font-normal text-brand-primary text-[48px] leading-tight">
+            Simple desde el día uno.
+          </h2>
+        </div>
+
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-12 md:gap-0 relative">
+
+          <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-[#1E1E1E] z-0"></div>
+          <div className="block md:hidden absolute left-[30px] top-[40px] bottom-[40px] w-[1px] bg-[#1E1E1E] z-0"></div>
+
+          <div className="flex-1 pl-12 pr-0 md:px-6 relative z-10 GSAP-reveal" data-reveal>
+            <div className="font-mono text-[13px] text-[#1E1E1E] mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">01</div>
+            <div className="font-mono text-[13px] text-[#1E1E1E] mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">01</div>
+
+            <h3 className="font-sans font-medium text-[20px] text-brand-primary mb-4 md:text-center">Hablamos</h3>
+            <p className="font-sans font-light text-[15px] text-brand-muted leading-[1.6] md:text-center text-balance mx-auto">
+              Una llamada. Nos dices qué está fallando o qué hace falta. Te decimos qué construiríamos y cuánto costaría.
             </p>
-          </motion.div>
-        ))}
+          </div>
+
+          <div className="flex-1 pl-12 pr-0 md:px-6 relative z-10 GSAP-reveal" data-reveal>
+            <div className="font-mono text-[13px] text-[#1E1E1E] mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">02</div>
+            <div className="font-mono text-[13px] text-[#1E1E1E] mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">02</div>
+
+            <h3 className="font-sans font-medium text-[20px] text-brand-primary mb-4 md:text-center">Construimos</h3>
+            <p className="font-sans font-light text-[15px] text-brand-muted leading-[1.6] md:text-center text-balance mx-auto">
+              Entrega rápida. Recibes un sitio o sistema funcionando, no un mazo de wireframes y una línea de tiempo de tres meses.
+            </p>
+          </div>
+
+          <div className="flex-1 pl-12 pr-0 md:px-6 relative z-10 GSAP-reveal" data-reveal>
+            <div className="font-mono text-[13px] text-[#1E1E1E] mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">03</div>
+            <div className="font-mono text-[13px] text-[#1E1E1E] mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">03</div>
+
+            <h3 className="font-sans font-medium text-[20px] text-brand-primary mb-4 md:text-center">Funciona</h3>
+            <p className="font-sans font-light text-[15px] text-brand-muted leading-[1.6] md:text-center text-balance mx-auto">
+              Después de la entrega, tu sitio posiciona y tus sistemas trabajan. Tú no los administras. Ese es el punto.
+            </p>
+          </div>
+
+        </div>
+
       </div>
     </section>
   );

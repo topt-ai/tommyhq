@@ -1,32 +1,44 @@
-import Link from 'next/link';
+'use client';
 
 export function FooterES() {
+  const scrollToSection = (id: string) => {
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <footer className="border-t border-brand-border py-12 px-6">
-      <div className="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
-        <div className="flex flex-col items-center md:items-start gap-4">
-          <div className="flex items-center gap-4">
-            <Link href="/es-sv" className="font-nav font-extrabold text-xl tracking-tighter hover:text-brand-accent transition-colors">
-              Tommy HQ
-            </Link>
-            <span className="hidden md:inline-block text-brand-muted text-sm border-l border-brand-border pl-4">
-              Sistemas que funcionan solos.
-            </span>
-          </div>
-          <div className="text-sm font-mono text-brand-muted md:mt-2 text-center md:text-left">
-            <p>San Salvador, El Salvador</p>
-            <p>+503 XXXXXXXX</p> {/* TODO: NAP real de El Salvador */}
-          </div>
+    <footer className="bg-brand-bg border-t border-brand-border relative z-10">
+      <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-6 flex flex-col md:flex-row justify-between items-center gap-6 md:gap-0">
+
+        <div className="flex items-center gap-2.5 order-3 md:order-1">
+          <span className="w-8 h-8 rounded-[8px] border border-brand-border bg-brand-surface flex items-center justify-center">
+            <span className="font-display text-brand-accent text-[18px] leading-none">T</span>
+          </span>
+          <span className="font-sans font-light text-[13px] text-brand-muted">Tommy HQ</span>
         </div>
-        
-        <div className="flex items-center gap-6 font-mono text-sm uppercase tracking-widest text-brand-muted">
-          <a href="#servicios" className="hover:text-brand-primary transition-colors">Servicios</a>
-          <a href="#demos" className="hover:text-brand-primary transition-colors">Demos</a>
+
+        <div className="hidden md:block font-mono text-[11px] text-[#2A2A2A] order-2 tracking-wide">
+          Sistemas que funcionan aunque tú no estés.
         </div>
-        
-        <div className="text-brand-muted text-sm flex flex-col md:text-right gap-1 items-center md:items-end">
-          <p>Todos los derechos reservados · {new Date().getFullYear()}</p>
-          <p>Hecho por TommyHQ</p>
+
+        <div className="flex items-center gap-6 order-1 md:order-3">
+          <button onClick={() => scrollToSection('servicios')} className="font-sans font-light text-[13px] text-brand-muted hover:text-brand-primary transition-colors duration-250 cursor-pointer">
+            Servicios
+          </button>
+          <button onClick={() => scrollToSection('demos')} className="font-sans font-light text-[13px] text-brand-muted hover:text-brand-primary transition-colors duration-250 cursor-pointer">
+            Demos
+          </button>
+        </div>
+
+      </div>
+
+      <div className="border-t border-brand-border">
+        <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 py-4 flex flex-col md:flex-row justify-between items-center gap-2">
+          <div className="font-sans font-light text-[12px] text-brand-muted">
+            Todos los derechos reservados &middot; 2025
+          </div>
+          <div className="font-sans font-light text-[12px] text-brand-muted">
+            Hecho por <span className="text-brand-accent">TommyHQ</span>
+          </div>
         </div>
       </div>
     </footer>

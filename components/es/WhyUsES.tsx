@@ -1,41 +1,62 @@
-'use client';
-
-import { motion } from 'motion/react';
+const benefits = [
+  {
+    title: 'Siempre activos.',
+    description: 'Tu sitio posiciona y tus sistemas funcionan las 24 horas. Nada que estar vigilando.',
+  },
+  {
+    title: 'A tu medida.',
+    description: 'Sin plantillas, sin page builders. Cada sitio y sistema es a medida.',
+  },
+  {
+    title: 'Acceso directo.',
+    description: 'Hablas con la persona que construye, no con un account manager.',
+  },
+  {
+    title: 'Sin ataduras.',
+    description: 'Mes a mes, siempre. Si no funciona, no estás atrapado.',
+  },
+];
 
 export function WhyUsES() {
-  const points = [
-    { title: "Siempre Activo.", desc: "Tu sitio posiciona y tus sistemas operan las 24 horas. No hay nada que vigilar." },
-    { title: "Construido Para Ti.", desc: "Sin plantillas, sin constructores visuales. Cada web y sistema está hecho a tu medida." },
-    { title: "Acceso Directo.", desc: "Hablas directamente con el desarrollador, no con un manager de cuentas." },
-    { title: "Sin Ataduras.", desc: "De mes a mes, siempre. Si no te funciona, no estás atrapado en un contrato." }
-  ];
-
   return (
-    <section className="py-32 px-6 bg-[#0a0a0a] border-y border-brand-border/50">
-      <div className="max-w-7xl mx-auto grid lg:grid-cols-12 gap-16">
-        <div className="lg:col-span-5">
-          <p className="font-mono text-sm tracking-widest uppercase text-brand-accent mb-4">Por Qué Nosotros</p>
-          <h2 className="font-serif text-4xl md:text-6xl italic mb-6">&quot;Solo ganamos si tú ganas.&quot;</h2>
-          <p className="text-xl text-brand-muted leading-relaxed">
-            Eso significa cero contratos largos, cero rodeos y cero reportes de vanidad con números que no pagan tus cuentas.
+    <section id="por-que-nosotros" className="bg-brand-bg py-[120px] border-t border-brand-border">
+      <div className="max-w-[1200px] mx-auto px-6 md:px-12">
+        <div className="mb-16 GSAP-reveal" data-reveal>
+          <p className="font-mono text-[11px] uppercase tracking-[0.15em] text-brand-accent">
+            Por qué nosotros
           </p>
         </div>
 
-        <div className="lg:col-span-7 grid sm:grid-cols-2 gap-x-12 gap-y-16">
-          {points.map((pt, idx) => (
-            <motion.div 
-              key={pt.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: idx * 0.1 }}
-            >
-              <h3 className="font-serif text-2xl mb-3 text-brand-primary/90">{pt.title}</h3>
-              <p className="text-brand-muted leading-relaxed">
-                {pt.desc}
-              </p>
-            </motion.div>
-          ))}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24">
+          <div className="flex flex-col justify-between GSAP-reveal" data-reveal>
+            <h2 className="font-display italic text-brand-primary text-[48px] md:text-[68px] leading-[1.08] mb-8">
+              &quot;Solo ganamos<br />si tú ganas.&quot;
+            </h2>
+            <p className="font-sans font-light text-[18px] text-brand-muted leading-relaxed max-w-md">
+              Eso significa sin contratos largos, sin vueltas, y sin reportes de vanidad llenos de números que no pagan tus cuentas.
+            </p>
+          </div>
+
+          <div className="flex flex-col">
+            {benefits.map((benefit, index) => (
+              <div
+                key={index}
+                data-reveal
+                className={`GSAP-reveal py-8 ${index !== 0 ? 'border-t border-brand-border' : 'pt-0 lg:pt-8'} ${
+                  index === benefits.length - 1 ? 'border-b border-brand-border pb-8' : ''
+                }`}
+              >
+                <div className="flex flex-col md:flex-row md:items-baseline gap-2 md:gap-4">
+                  <h3 className="font-display text-brand-primary text-[32px] md:text-[40px] leading-tight w-full md:w-1/2">
+                    {benefit.title}
+                  </h3>
+                  <p className="font-sans font-light text-brand-muted text-[16px] md:text-[18px] leading-relaxed w-full md:w-1/2">
+                    {benefit.description}
+                  </p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </div>
     </section>

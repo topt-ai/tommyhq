@@ -1,23 +1,100 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: var(--font-dm-serif);
+  --font-display: var(--font-dm-serif);
   --font-sans: var(--font-dm-sans);
   --font-mono: var(--font-jetbrains);
-  --font-nav: var(--font-shippori);
+  --font-brand: var(--font-shippori);
 
-  --color-brand-bg: #0a0a0a;
-  --color-brand-primary: #f5f5f5;
-  --color-brand-accent: #C9717A;
-  --color-brand-hover: #D4888E;
+  --color-brand-bg: #0A0A0A;
+  --color-brand-surface: #111111;
   --color-brand-border: #1E1E1E;
-  --color-brand-muted: #888888;
+  --color-brand-primary: #F5F0EE;
+  --color-brand-muted: #6B6B6B;
+  --color-brand-accent: #E8B4B8;
+  --color-brand-hover: #C9717A;
 }
 
-@layer base {
-  body {
-    background-color: var(--color-brand-bg);
-    color: var(--color-brand-primary);
-    font-family: var(--font-sans), sans-serif;
+body {
+  background-color: var(--color-brand-bg);
+  color: var(--color-brand-primary);
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background-color: var(--color-brand-accent);
+  color: var(--color-brand-bg);
+}
+
+.noise-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 9999;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.text-balance {
+  text-wrap: balance;
+}
+
+.GSAP-reveal {
+  opacity: 0;
+}
+
+.status-widget {
+  display: none;
+}
+@media (min-width: 1101px) {
+  .status-widget {
+    display: block;
+  }
+}
+
+@keyframes statusDotPulse {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.15);
+  }
+}
+
+.status-dot {
+  animation: statusDotPulse 2s infinite ease-in-out;
+  box-shadow: 0 0 8px rgba(74, 222, 128, 0.5);
+}
+
+.illustration-tint {
+  background-color: #E8B4B8;
+}
+.illustration-tint img {
+  display: block;
+  width: 100%;
+  max-width: 420px;
+  mix-blend-mode: multiply;
+  opacity: 0.85;
+}
+
+@media (max-width: 767px) {
+  .signature-illustration {
+    display: none;
+  }
+}
+
+.hero-particles {
+  display: none;
+}
+@media (min-width: 901px) {
+  .hero-particles {
+    display: block;
   }
 }
