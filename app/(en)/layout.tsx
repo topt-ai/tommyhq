@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '../globals.css';
 import { dmSans, dmSerifDisplay, jetbrainsMono, shipporiMincho } from '@/lib/fonts';
 import { ClientRoot } from '@/components/ClientRoot';
+import { Analytics } from '@vercel/analytics/next';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://tommyhq.com'),
@@ -29,6 +30,7 @@ export default function RootLayout({
     <html lang="en" className={`${dmSans.variable} ${dmSerifDisplay.variable} ${jetbrainsMono.variable} ${shipporiMincho.variable}`}>
       <body className="antialiased font-sans bg-brand-bg text-brand-primary min-h-screen flex flex-col selection:bg-brand-accent selection:text-white">
         <ClientRoot>{children}</ClientRoot>
+        <Analytics />
       </body>
     </html>
   );
