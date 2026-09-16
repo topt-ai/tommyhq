@@ -16,7 +16,7 @@ export function FooterES() {
           <span className="font-sans font-light text-[13px] text-brand-muted">Tommy HQ</span>
         </div>
 
-        <div className="hidden md:block font-mono text-[11px] text-[#2A2A2A] order-2 tracking-wide">
+        <div className="hidden md:block font-mono text-[11px] text-brand-border-hover order-2 tracking-wide">
           Sistemas que funcionan aunque tú no estés.
         </div>
 

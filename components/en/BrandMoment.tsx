@@ -13,40 +13,55 @@ export function BrandMoment() {
   useEffect(() => {
     if (!sectionRef.current || !wordRef.current) return;
 
-    const ctx = gsap.context(() => {
-      gsap.fromTo(
-        wordRef.current,
-        { color: '#141414' },
-        {
-          color: '#F5F0EE',
-          ease: 'none',
-          scrollTrigger: {
-            trigger: sectionRef.current,
-            start: 'top 80%',
-            end: 'top 20%',
-            scrub: true,
-          },
-        }
-      );
-    }, sectionRef);
+    const readVar = (name: string) =>
+      getComputedStyle(document.documentElement).getPropertyValue(name).trim();
 
-    return () => ctx.revert();
+    let ctx: ReturnType<typeof gsap.context>;
+
+    const build = () => {
+      ctx?.revert();
+      const from = readVar('--color-brand-faint') || '#141414';
+      const to = readVar('--color-brand-primary') || '#F5F0EE';
+      ctx = gsap.context(() => {
+        gsap.fromTo(
+          wordRef.current,
+          { color: from },
+          {
+            color: to,
+            ease: 'none',
+            scrollTrigger: {
+              trigger: sectionRef.current,
+              start: 'top 80%',
+              end: 'top 20%',
+              scrub: true,
+            },
+          }
+        );
+      }, sectionRef);
+    };
+
+    build();
+    window.addEventListener('themechange', build);
+
+    return () => {
+      window.removeEventListener('themechange', build);
+      ctx?.revert();
+    };
   }, []);
 
   return (
     <section
       ref={sectionRef}
-      className="w-full flex items-center justify-center overflow-hidden"
-      style={{ backgroundColor: '#0A0A0A', height: '60vh' }}
+      className="w-full flex items-center justify-center overflow-hidden bg-brand-bg"
+      style={{ height: '60vh' }}
     >
       <div
         ref={wordRef}
-        className="px-6 text-center font-brand"
+        className="px-6 text-center font-brand text-brand-faint"
         style={{
           fontWeight: 700,
           fontSize: 'clamp(44px, 9vw, 128px)',
           letterSpacing: '-0.01em',
-          color: '#141414',
           lineHeight: 1.05,
         }}
       >

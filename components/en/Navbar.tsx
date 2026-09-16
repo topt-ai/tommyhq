@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { cn } from '@/lib/utils';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -27,7 +28,7 @@ export function Navbar() {
       className={cn(
         'fixed top-6 left-1/2 -translate-x-1/2 z-50 rounded-full transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] items-center px-4 py-2 flex gap-4 sm:gap-8 max-w-[calc(100vw-24px)]',
         scrolled
-          ? 'bg-[#111111]/85 backdrop-blur-[12px] border border-brand-border'
+          ? 'bg-brand-glass/85 backdrop-blur-[12px] border border-brand-border'
           : 'bg-transparent border border-transparent'
       )}
     >
@@ -51,9 +52,10 @@ export function Navbar() {
           Services
         </button>
       </div>
+      <ThemeToggle />
       <button
         onClick={() => scrollToSection('contact')}
-        className="rounded-full bg-brand-hover text-white font-sans font-medium text-[13px] px-[20px] py-[8px] transition-all duration-250 hover:bg-[#D4888E] hover:shadow-[0_0_20px_rgba(201,113,122,0.3)] whitespace-nowrap cursor-pointer"
+        className="rounded-full bg-brand-hover text-white font-sans font-medium text-[13px] px-[20px] py-[8px] transition-all duration-250 hover:bg-brand-btn-hover hover:shadow-[0_0_20px_rgba(201,113,122,0.3)] whitespace-nowrap cursor-pointer"
       >
         Book a call
       </button>

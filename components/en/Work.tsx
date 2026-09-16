@@ -27,7 +27,7 @@ export function Work() {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[900px] mx-auto mt-14">
           <button
             onClick={() => openContactForm('demo')}
-            className="group text-left bg-brand-surface border border-brand-border hover:border-[#2A2A2A] rounded-[16px] p-8 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
+            className="group text-left bg-brand-surface border border-brand-border hover:border-brand-border-hover rounded-[16px] p-8 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
             data-reveal
           >
             <div className="w-[44px] h-[44px] rounded-full border border-brand-border bg-brand-bg flex items-center justify-center text-brand-accent mb-6">
@@ -44,7 +44,7 @@ export function Work() {
 
           <button
             onClick={() => openContactForm('audit')}
-            className="group text-left bg-brand-surface border border-brand-border hover:border-[#2A2A2A] rounded-[16px] p-8 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
+            className="group text-left bg-brand-surface border border-brand-border hover:border-brand-border-hover rounded-[16px] p-8 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
             data-reveal
           >
             <div className="w-[44px] h-[44px] rounded-full border border-brand-border bg-brand-bg flex items-center justify-center text-brand-accent mb-6">

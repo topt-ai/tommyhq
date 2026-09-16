@@ -85,7 +85,7 @@ export function Hero() {
           <div className="flex items-center gap-6 mt-10 GSAP-reveal" data-reveal>
             <button
               onClick={scrollToContact}
-              className="rounded-full bg-brand-hover text-white font-sans font-medium text-[14px] px-[28px] py-[12px] transition-all duration-250 hover:bg-[#D4888E] hover:shadow-[0_0_20px_rgba(201,113,122,0.3)] cursor-pointer"
+              className="rounded-full bg-brand-hover text-white font-sans font-medium text-[14px] px-[28px] py-[12px] transition-all duration-250 hover:bg-brand-btn-hover hover:shadow-[0_0_20px_rgba(201,113,122,0.3)] cursor-pointer"
             >
               Book a call
             </button>
@@ -204,9 +204,10 @@ function RankDashboard() {
 
   return (
     <div
-      className="relative rounded-[20px] border border-white/10 p-6 shadow-[0_20px_60px_rgba(0,0,0,0.5)]"
+      className="relative rounded-[20px] border border-glass-line p-6"
       style={{
-        background: 'linear-gradient(160deg, rgba(255,255,255,0.06), rgba(255,255,255,0.02))',
+        background: 'var(--glass-gradient)',
+        boxShadow: 'var(--glass-shadow)',
         backdropFilter: 'blur(12px)',
         WebkitBackdropFilter: 'blur(12px)',
       }}
@@ -224,7 +225,7 @@ function RankDashboard() {
         </div>
       </div>
 
-      <div className="flex items-center gap-3 rounded-[12px] border border-white/10 bg-black/30 px-4 py-3 mb-4">
+      <div className="flex items-center gap-3 rounded-[12px] border border-glass-line bg-glass-fill-strong px-4 py-3 mb-4">
         <Search size={16} className="text-brand-muted shrink-0" />
         <div className="font-sans text-[14px] text-brand-primary flex items-center min-w-0">
           <span className="truncate">{typed}</span>
@@ -236,7 +237,7 @@ function RankDashboard() {
 
       <div className="min-h-[180px]">
         <div
-          className="flex items-center justify-between rounded-[12px] border border-white/10 bg-black/20 px-4 py-4 mb-4"
+          className="flex items-center justify-between rounded-[12px] border border-glass-line bg-glass-fill px-4 py-4 mb-4"
           style={revealStyle(0)}
         >
           <div className="flex items-center gap-2 min-w-0">
@@ -253,7 +254,7 @@ function RankDashboard() {
           {current.stats.map((stat, i) => (
             <div
               key={i}
-              className="rounded-[12px] border border-white/10 bg-black/20 px-4 py-3"
+              className="rounded-[12px] border border-glass-line bg-glass-fill px-4 py-3"
               style={revealStyle(0.12 + i * 0.1)}
             >
               <div className="font-display text-[24px] text-brand-primary leading-none mb-1">{stat.value}</div>

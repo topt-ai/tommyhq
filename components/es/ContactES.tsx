@@ -35,25 +35,25 @@ const WHATSAPP_URL =
   encodeURIComponent('Hola, quiero más información sobre TommyHQ');
 
 const FORMS: Record<FormKey, { label: string; submissionType: string; subcopy: string }> = {
-  default: {
-    label: 'General',
-    submissionType: 'General inquiry',
-    subcopy: 'Cuéntanos un poco sobre tu negocio y cómo podemos ayudarte. Te contactamos lo antes posible.',
-  },
   audit: {
-    label: 'Auditoría',
+    label: 'Auditoría gratis',
     submissionType: 'Rank audit request',
-    subcopy: '¿Quieres saber exactamente dónde estás parado? Auditamos tu presencia en Google y te decimos qué te está frenando.',
+    subcopy: '¿Quieres saber exactamente dónde estás parado? Auditamos gratis tu presencia en Google y en búsquedas con IA, y te decimos qué te está frenando.',
   },
   demo: {
     label: 'Sitio demo',
     submissionType: 'Website demo request',
     subcopy: 'Mira lo que construiríamos para ti. Cuéntanos sobre tu negocio y armamos una demo.',
   },
+  default: {
+    label: 'General',
+    submissionType: 'General inquiry',
+    subcopy: 'Cuéntanos un poco sobre tu negocio y cómo podemos ayudarte. Te contactamos lo antes posible.',
+  },
 };
 
 export function ContactES() {
-  const [activeForm, setActiveForm] = useState<FormKey>('default');
+  const [activeForm, setActiveForm] = useState<FormKey>('audit');
   const [form, setForm] = useState<FormState>(EMPTY);
   const [noWebsite, setNoWebsite] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -96,7 +96,8 @@ export function ContactES() {
           formType: activeForm,
           submissionType: FORMS[activeForm].submissionType,
           submittedAt: new Date().toISOString(),
-          source: 'tommyhq.com/es-sv',
+          locale: 'es',
+          source: 'tommyhq/es',
         }),
       });
 
@@ -228,14 +229,14 @@ export function ContactES() {
 
               {status === 'error' && (
                 <div className="mt-5 font-sans text-[13px] text-[#E4707A]">
-                  Algo salió mal enviando tu mensaje. Inténtalo de nuevo, o escríbenos a hola@tommyhq.com.
+                  Algo salió mal enviando tu mensaje. Inténtalo de nuevo, o escríbenos a tommy@tommyhq.com.
                 </div>
               )}
 
               <button
                 type="submit"
                 disabled={sending}
-                className="mt-8 w-full md:w-auto rounded-full bg-brand-hover text-white font-sans font-medium text-[14px] px-[32px] py-[14px] transition-all duration-250 hover:bg-[#D4888E] hover:shadow-[0_0_20px_rgba(201,113,122,0.3)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                className="mt-8 w-full md:w-auto rounded-full bg-brand-hover text-white font-sans font-medium text-[14px] px-[32px] py-[14px] transition-all duration-250 hover:bg-brand-btn-hover hover:shadow-[0_0_20px_rgba(201,113,122,0.3)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {sending ? 'Enviando.' : 'Enviar mensaje'}
               </button>
@@ -246,8 +247,8 @@ export function ContactES() {
             <span className="font-sans font-light text-[14px] text-brand-muted">
               ¿Prefieres email? Escríbenos a
             </span>
-            <a href="mailto:hola@tommyhq.com" className="font-sans font-normal text-[14px] text-brand-accent hover:underline transition-all">
-              hola@tommyhq.com
+            <a href="mailto:tommy@tommyhq.com" className="font-sans font-normal text-[14px] text-brand-accent hover:underline transition-all">
+              tommy@tommyhq.com
             </a>
           </div>
 
@@ -259,7 +260,7 @@ export function ContactES() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-brand-border text-brand-primary font-sans font-medium text-[13px] px-[20px] py-[10px] transition-all duration-250 hover:border-[#2A2A2A] cursor-pointer"
+              className="inline-flex items-center gap-2 rounded-full border border-brand-border text-brand-primary font-sans font-medium text-[13px] px-[20px] py-[10px] transition-all duration-250 hover:border-brand-border-hover cursor-pointer"
             >
               <svg width="16" height="16" viewBox="0 0 24 24" fill="#4ADE80" aria-hidden="true">
                 <path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.87 9.87 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91C21.96 6.45 17.5 2 12.04 2Zm5.83 14.13c-.25.7-1.24 1.28-2.03 1.45-.54.11-1.25.2-3.63-.78-3.05-1.26-5.01-4.36-5.16-4.56-.15-.2-1.23-1.64-1.23-3.13s.77-2.22 1.05-2.52c.25-.28.62-.4.99-.4.12 0 .23 0 .32.01.28.01.42-.02.65.5.28.63.95 2.16 1.03 2.32.08.16.13.35.03.56-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.31.31-.13.61.18.3.79 1.3 1.7 2.11 1.17 1.04 2.15 1.37 2.46 1.52.31.15.49.13.67-.08.18-.2.77-.9.98-1.21.2-.3.4-.25.68-.15.28.1 1.79.85 2.1 1.01.31.15.51.23.59.36.08.13.08.75-.17 1.45Z" />

@@ -10,9 +10,11 @@ export function Services() {
   const sectionRef = useRef<HTMLElement>(null);
   const card1Ref = useRef<HTMLDivElement>(null);
 
-  const [score, setScore] = useState(0);
-  const [loadTime, setLoadTime] = useState(2.0);
-  const [customCode, setCustomCode] = useState(0);
+  // Initialise at the final values so the card reads correctly before/without
+  // the scroll animation (avoids a flash of "0%" custom code on first paint).
+  const [score, setScore] = useState(98);
+  const [loadTime, setLoadTime] = useState(1.2);
+  const [customCode, setCustomCode] = useState(100);
 
   useEffect(() => {
     if (!card1Ref.current) return;
@@ -21,6 +23,9 @@ export function Services() {
       trigger: card1Ref.current,
       start: 'top 85%',
       onEnter: () => {
+        setScore(0);
+        setLoadTime(5);
+        setCustomCode(0);
         gsap.to({ val: 0 }, {
           val: 98,
           duration: 1.5,
@@ -69,19 +74,19 @@ export function Services() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
           <div
-            className="group relative bg-transparent border border-brand-border hover:border-[#2A2A2A] rounded-[16px] p-6 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
+            className="group relative bg-transparent border border-brand-border hover:border-brand-border-hover rounded-[16px] p-6 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
             data-reveal
           >
             <div className="font-mono text-[11px] text-brand-muted mb-4">01</div>
-            <h3 className="font-display text-[36px] text-brand-primary mb-4">Local SEO</h3>
+            <h3 className="font-display text-[36px] text-brand-primary mb-4">Local SEO + Ads</h3>
             <p className="font-sans font-light text-[16px] text-brand-muted leading-[1.7] mb-8">
-              We get your business ranking where your customers are searching. Top 3. Guaranteed.
+              Own local search two ways. SEO ranks you in the map pack, Top 3 guaranteed. Google &amp; Meta Ads put you in front of nearby buyers fast. Run them together to compound, or either one on its own.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-10">
               <Tag label="GBP" />
               <Tag label="Local Authority" />
-              <Tag label="Backend Fixes" />
+              <Tag label="Google & Meta Ads" />
             </div>
 
             <div className="grid grid-cols-3 gap-4 pt-6 border-t border-brand-border/30">
@@ -90,19 +95,19 @@ export function Services() {
                 <div className="font-sans font-light text-[12px] text-brand-muted">Map rankings</div>
               </div>
               <div>
-                <div className="font-display text-[32px] text-brand-accent mb-1">3x</div>
-                <div className="font-sans font-light text-[12px] text-brand-muted">More local calls</div>
+                <div className="font-display text-[32px] text-brand-accent mb-1">2 ways</div>
+                <div className="font-sans font-light text-[12px] text-brand-muted">To get found</div>
               </div>
               <div>
-                <div className="font-display text-[32px] text-brand-accent mb-1">24/7</div>
-                <div className="font-sans font-light text-[12px] text-brand-muted">Visibility</div>
+                <div className="font-display text-[32px] text-brand-accent mb-1">Local</div>
+                <div className="font-sans font-light text-[12px] text-brand-muted">Nearby buyers</div>
               </div>
             </div>
           </div>
 
           <div
             ref={card1Ref}
-            className="group relative bg-transparent border border-brand-border hover:border-[#2A2A2A] rounded-[16px] p-6 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
+            className="group relative bg-transparent border border-brand-border hover:border-brand-border-hover rounded-[16px] p-6 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
             data-reveal
           >
             <div className="font-mono text-[11px] text-brand-muted mb-4">02</div>
@@ -134,7 +139,7 @@ export function Services() {
           </div>
 
           <div
-            className="group relative bg-transparent border border-brand-border hover:border-[#2A2A2A] rounded-[16px] p-6 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
+            className="group relative bg-transparent border border-brand-border hover:border-brand-border-hover rounded-[16px] p-6 md:p-10 transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
             data-reveal
           >
             <div className="font-mono text-[11px] text-brand-muted mb-4">03</div>

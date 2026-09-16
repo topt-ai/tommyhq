@@ -76,7 +76,7 @@ export function ProjectsES() {
           {PROJECTS.map((p) => (
             <div
               key={p.client}
-              className="group relative rounded-[16px] bg-brand-surface border border-brand-border hover:border-[#2A2A2A] overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
+              className="group relative rounded-[16px] bg-brand-surface border border-brand-border hover:border-brand-border-hover overflow-hidden transition-all duration-300 ease-[cubic-bezier(0.4,0,0.2,1)] hover:-translate-y-1 GSAP-reveal"
               data-reveal
             >
               <div className="relative bg-brand-bg border-b border-brand-border overflow-hidden" style={{ aspectRatio: '16 / 10' }}>

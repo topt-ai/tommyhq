@@ -6,13 +6,67 @@
   --font-mono: var(--font-jetbrains);
   --font-brand: var(--font-shippori);
 
-  --color-brand-bg: #0A0A0A;
-  --color-brand-surface: #111111;
-  --color-brand-border: #1E1E1E;
-  --color-brand-primary: #F5F0EE;
-  --color-brand-muted: #6B6B6B;
-  --color-brand-accent: #E8B4B8;
-  --color-brand-hover: #C9717A;
+  /* Color tokens resolve to theme-specific variables set below, so every
+     `bg-brand-*` / `text-brand-*` utility flips with `data-theme`. */
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-border: var(--brand-border);
+  --color-brand-border-hover: var(--brand-border-hover);
+  --color-brand-primary: var(--brand-primary);
+  --color-brand-muted: var(--brand-muted);
+  --color-brand-accent: var(--brand-accent);
+  --color-brand-hover: var(--brand-hover);
+  --color-brand-btn-hover: var(--brand-btn-hover);
+  --color-brand-code: var(--brand-code);
+  --color-brand-faint: var(--brand-faint);
+  --color-brand-glass: var(--brand-glass);
+  --color-glass-line: var(--glass-line);
+  --color-glass-fill: var(--glass-fill);
+  --color-glass-fill-strong: var(--glass-fill-strong);
+}
+
+/* Dark is the base / fallback (applies when no data-theme is set yet). */
+:root,
+:root[data-theme='dark'] {
+  --brand-bg: #0A0A0A;
+  --brand-surface: #111111;
+  --brand-border: #1E1E1E;
+  --brand-border-hover: #2A2A2A;
+  --brand-primary: #F5F0EE;
+  --brand-muted: #6B6B6B;
+  --brand-accent: #E8B4B8;
+  --brand-hover: #C9717A;
+  --brand-btn-hover: #D4888E;
+  --brand-code: #121212;
+  --brand-faint: #141414;
+  --brand-glass: #111111;
+  --glass-line: rgba(255, 255, 255, 0.10);
+  --glass-fill: rgba(0, 0, 0, 0.20);
+  --glass-fill-strong: rgba(0, 0, 0, 0.30);
+  --glass-gradient: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+  --glass-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --brand-bg: #FBF9F8;
+  --brand-surface: #FFFFFF;
+  --brand-border: #E7E2DE;
+  --brand-border-hover: #D8D0C9;
+  --brand-primary: #1A1512;
+  --brand-muted: #736C66;
+  --brand-accent: #B04A54;
+  --brand-hover: #B85A63;
+  --brand-btn-hover: #A6444D;
+  --brand-code: #F4F1EF;
+  --brand-faint: #E7E1DC;
+  --brand-glass: #FFFFFF;
+  --glass-line: rgba(0, 0, 0, 0.08);
+  --glass-fill: rgba(0, 0, 0, 0.03);
+  --glass-fill-strong: rgba(0, 0, 0, 0.05);
+  --glass-gradient: linear-gradient(160deg, rgba(255, 255, 255, 0.92), rgba(250, 246, 244, 0.70));
+  --glass-shadow: 0 20px 60px rgba(90, 70, 72, 0.14);
+  color-scheme: light;
 }
 
 body {
@@ -21,11 +75,12 @@ body {
   font-family: var(--font-sans);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 ::selection {
   background-color: var(--color-brand-accent);
-  color: var(--color-brand-bg);
+  color: #FFFFFF;
 }
 
 .noise-overlay {

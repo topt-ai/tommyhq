@@ -7,7 +7,7 @@ export function LocalBusinessSchema() {
     "name": "TommyHQ",
     "url": "https://tommyhq.com/es-sv/",
     "telephone": "+50372018215",
-    "email": "hola@tommyhq.com",
+    "email": "tommy@tommyhq.com",
     "priceRange": "$$",
     "address": {
       "@type": "PostalAddress",

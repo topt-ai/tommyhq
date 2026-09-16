@@ -46,8 +46,8 @@ export function SystemDiagramES() {
           >
             <defs>
               <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
-                <stop offset="0%" stopColor="#E8B4B8" stopOpacity="0.35" />
-                <stop offset="100%" stopColor="#E8B4B8" stopOpacity="0" />
+                <stop offset="0%" style={{ stopColor: 'var(--color-brand-accent)' }} stopOpacity="0.35" />
+                <stop offset="100%" style={{ stopColor: 'var(--color-brand-accent)' }} stopOpacity="0" />
               </radialGradient>
               <filter id="packetGlow" x="-50%" y="-50%" width="200%" height="200%">
                 <feGaussianBlur stdDeviation="2.5" />
@@ -61,13 +61,13 @@ export function SystemDiagramES() {
               const d = `M ${a.x} ${a.y} L ${b.x} ${b.y}`;
               return (
                 <g key={pathId}>
-                  <path id={pathId} d={d} stroke="#1E1E1E" strokeWidth="1" fill="none" />
-                  <circle r="6" fill="#E8B4B8" opacity="0.35" filter="url(#packetGlow)">
+                  <path id={pathId} d={d} style={{ stroke: 'var(--color-brand-border)' }} strokeWidth="1" fill="none" />
+                  <circle r="6" style={{ fill: 'var(--color-brand-accent)' }} opacity="0.35" filter="url(#packetGlow)">
                     <animateMotion dur={`${e.dur}s`} begin={`${e.delay}s`} repeatCount="indefinite" rotate="auto">
                       <mpath href={`#${pathId}`} />
                     </animateMotion>
                   </circle>
-                  <circle r="3" fill="#E8B4B8">
+                  <circle r="3" style={{ fill: 'var(--color-brand-accent)' }}>
                     <animateMotion dur={`${e.dur}s`} begin={`${e.delay}s`} repeatCount="indefinite" rotate="auto">
                       <mpath href={`#${pathId}`} />
                     </animateMotion>
@@ -79,14 +79,14 @@ export function SystemDiagramES() {
             {NODES.map((n) => (
               <g key={n.id}>
                 <circle cx={n.x} cy={n.y} r="46" fill="url(#nodeGlow)" />
-                <circle cx={n.x} cy={n.y} r="22" fill="#0A0A0A" stroke="#2A2A2A" strokeWidth="1" />
-                <circle cx={n.x} cy={n.y} r="4" fill="#E8B4B8">
+                <circle cx={n.x} cy={n.y} r="22" style={{ fill: 'var(--color-brand-bg)', stroke: 'var(--color-brand-border-hover)' }} strokeWidth="1" />
+                <circle cx={n.x} cy={n.y} r="4" style={{ fill: 'var(--color-brand-accent)' }}>
                   <animate attributeName="opacity" values="1;0.35;1" dur="2.4s" begin={`${(n.x + n.y) % 3}s`} repeatCount="indefinite" />
                 </circle>
-                <text x={n.x} y={n.y + 48} textAnchor="middle" fill="#F5F0EE" fontFamily="DM Sans, sans-serif" fontSize="13" fontWeight="400">
+                <text x={n.x} y={n.y + 48} textAnchor="middle" style={{ fill: 'var(--color-brand-primary)' }} fontFamily="DM Sans, sans-serif" fontSize="13" fontWeight="400">
                   {n.label}
                 </text>
-                <text x={n.x} y={n.y + 66} textAnchor="middle" fill="#6B6B6B" fontFamily="JetBrains Mono, monospace" fontSize="10" letterSpacing="0.08em">
+                <text x={n.x} y={n.y + 66} textAnchor="middle" style={{ fill: 'var(--color-brand-muted)' }} fontFamily="JetBrains Mono, monospace" fontSize="10" letterSpacing="0.08em">
                   {n.sub.toUpperCase()}
                 </text>
               </g>

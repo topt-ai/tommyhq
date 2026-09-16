@@ -31,25 +31,25 @@ const WEBHOOK_URL =
   'https://tommy-1.app.n8n.cloud/webhook/54de26e0-f0eb-4eae-a2a5-5a94d730eb04';
 
 const FORMS: Record<FormKey, { label: string; submissionType: string; subcopy: string }> = {
-  default: {
-    label: 'General',
-    submissionType: 'General inquiry',
-    subcopy: "Tell us a little about your business and how we can help. We'll get in touch as soon as possible.",
-  },
   audit: {
-    label: 'Rank Audit',
+    label: 'Free Rank Audit',
     submissionType: 'Rank audit request',
-    subcopy: "Want to know exactly where you stand? We'll audit your Google presence and show you what's holding you back.",
+    subcopy: "Want to know exactly where you stand? We'll audit your Google and AI search presence for free and show you what's holding you back.",
   },
   demo: {
     label: 'Demo Site',
     submissionType: 'Website demo request',
     subcopy: "See what we'd build for you. Tell us about your business and we'll put together a demo.",
   },
+  default: {
+    label: 'General',
+    submissionType: 'General inquiry',
+    subcopy: "Tell us a little about your business and how we can help. We'll get in touch as soon as possible.",
+  },
 };
 
 export function Contact() {
-  const [activeForm, setActiveForm] = useState<FormKey>('default');
+  const [activeForm, setActiveForm] = useState<FormKey>('audit');
   const [form, setForm] = useState<FormState>(EMPTY);
   const [noWebsite, setNoWebsite] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
@@ -92,6 +92,7 @@ export function Contact() {
           formType: activeForm,
           submissionType: FORMS[activeForm].submissionType,
           submittedAt: new Date().toISOString(),
+          locale: 'en',
           source: 'tommyhq.com',
         }),
       });
@@ -231,7 +232,7 @@ export function Contact() {
               <button
                 type="submit"
                 disabled={sending}
-                className="mt-8 w-full md:w-auto rounded-full bg-brand-hover text-white font-sans font-medium text-[14px] px-[32px] py-[14px] transition-all duration-250 hover:bg-[#D4888E] hover:shadow-[0_0_20px_rgba(201,113,122,0.3)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
+                className="mt-8 w-full md:w-auto rounded-full bg-brand-hover text-white font-sans font-medium text-[14px] px-[32px] py-[14px] transition-all duration-250 hover:bg-brand-btn-hover hover:shadow-[0_0_20px_rgba(201,113,122,0.3)] cursor-pointer disabled:opacity-60 disabled:cursor-not-allowed"
               >
                 {sending ? 'Sending.' : 'Send message'}
               </button>

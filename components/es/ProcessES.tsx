@@ -14,12 +14,12 @@ export function ProcessES() {
 
         <div className="flex flex-col md:flex-row justify-between items-start md:items-stretch gap-12 md:gap-0 relative">
 
-          <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-[#1E1E1E] z-0"></div>
-          <div className="block md:hidden absolute left-[30px] top-[40px] bottom-[40px] w-[1px] bg-[#1E1E1E] z-0"></div>
+          <div className="hidden md:block absolute top-[28px] left-[10%] right-[10%] h-[1px] bg-brand-border z-0"></div>
+          <div className="block md:hidden absolute left-[30px] top-[40px] bottom-[40px] w-[1px] bg-brand-border z-0"></div>
 
           <div className="flex-1 pl-12 pr-0 md:px-6 relative z-10 GSAP-reveal" data-reveal>
-            <div className="font-mono text-[13px] text-[#1E1E1E] mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">01</div>
-            <div className="font-mono text-[13px] text-[#1E1E1E] mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">01</div>
+            <div className="font-mono text-[13px] text-brand-border mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">01</div>
+            <div className="font-mono text-[13px] text-brand-border mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">01</div>
 
             <h3 className="font-sans font-medium text-[20px] text-brand-primary mb-4 md:text-center">Hablamos</h3>
             <p className="font-sans font-light text-[15px] text-brand-muted leading-[1.6] md:text-center text-balance mx-auto">
@@ -28,8 +28,8 @@ export function ProcessES() {
           </div>
 
           <div className="flex-1 pl-12 pr-0 md:px-6 relative z-10 GSAP-reveal" data-reveal>
-            <div className="font-mono text-[13px] text-[#1E1E1E] mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">02</div>
-            <div className="font-mono text-[13px] text-[#1E1E1E] mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">02</div>
+            <div className="font-mono text-[13px] text-brand-border mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">02</div>
+            <div className="font-mono text-[13px] text-brand-border mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">02</div>
 
             <h3 className="font-sans font-medium text-[20px] text-brand-primary mb-4 md:text-center">Construimos</h3>
             <p className="font-sans font-light text-[15px] text-brand-muted leading-[1.6] md:text-center text-balance mx-auto">
@@ -38,8 +38,8 @@ export function ProcessES() {
           </div>
 
           <div className="flex-1 pl-12 pr-0 md:px-6 relative z-10 GSAP-reveal" data-reveal>
-            <div className="font-mono text-[13px] text-[#1E1E1E] mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">03</div>
-            <div className="font-mono text-[13px] text-[#1E1E1E] mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">03</div>
+            <div className="font-mono text-[13px] text-brand-border mb-6 hidden md:block bg-brand-bg w-max px-2 mx-auto">03</div>
+            <div className="font-mono text-[13px] text-brand-border mb-2 md:hidden absolute left-0 top-1 bg-brand-bg py-2">03</div>
 
             <h3 className="font-sans font-medium text-[20px] text-brand-primary mb-4 md:text-center">Funciona</h3>
             <p className="font-sans font-light text-[15px] text-brand-muted leading-[1.6] md:text-center text-balance mx-auto">

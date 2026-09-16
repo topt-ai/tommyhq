@@ -1,4 +1,15 @@
+import { RotatingQuery } from '@/components/RotatingQuery';
+
 const labels = ['SEO', 'GEO', 'AEO'];
+
+const QUERIES = [
+  'mejor techador en (tu ciudad)',
+  'mejor clínica dental en (tu ciudad)',
+  'mejor abogado cerca de mí',
+  'mejor taller mecánico en (tu ciudad)',
+  'mejor plomero en (tu ciudad)',
+  'mejor restaurante en (tu ciudad)',
+];
 
 export function AISearchES() {
   return (
@@ -14,14 +25,11 @@ export function AISearchES() {
           Tus clientes le preguntan a ChatGPT y a los buscadores de IA que les recomienden un negocio, no solo googlean. Construimos tu sitio para que ambos te encuentren: los buscadores que ya conoces, y las herramientas de IA que rápidamente se están convirtiendo en la nueva puerta de entrada.
         </p>
 
-        <div className="max-w-[520px] mx-auto mb-10 rounded-[14px] border border-brand-border bg-[#121212] px-5 py-4 text-left">
+        <div className="max-w-[520px] mx-auto mb-10 rounded-[14px] border border-brand-border bg-brand-code px-5 py-4 text-left">
           <div className="font-mono text-[10px] uppercase tracking-[0.15em] text-brand-muted mb-2">
             Pruébalo ahora mismo
           </div>
-          <div className="font-mono text-[14px] text-brand-primary flex items-center gap-2">
-            <span className="text-brand-accent">&gt;</span>
-            <span>&quot;mejor [tu servicio] en [tu ciudad]&quot;</span>
-          </div>
+          <RotatingQuery phrases={QUERIES} />
           <div className="font-sans font-light text-[13px] text-brand-muted mt-3 leading-relaxed">
             Pregúntale eso a cualquier IA. Si tu negocio no aparece en la respuesta, eso es exactamente lo que arreglamos.
           </div>
