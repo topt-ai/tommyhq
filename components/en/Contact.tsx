@@ -53,6 +53,8 @@ export function Contact() {
   const [form, setForm] = useState<FormState>(EMPTY);
   const [noWebsite, setNoWebsite] = useState(false);
   const [status, setStatus] = useState<'idle' | 'sending' | 'success' | 'error'>('idle');
+  // Honeypot: stays empty for real users, bots fill it. See hidden field below.
+  const [honeypot, setHoneypot] = useState('');
 
   useEffect(() => {
     const handler = (e: Event) => {
@@ -78,6 +80,15 @@ export function Contact() {
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
+
+    // Bot trap: if the hidden field is filled, silently accept without sending.
+    if (honeypot.trim() !== '') {
+      setStatus('success');
+      setForm(EMPTY);
+      setNoWebsite(false);
+      return;
+    }
+
     setStatus('sending');
 
     const websiteValue = noWebsite ? 'No website yet' : form.website || 'N/A';
@@ -94,6 +105,7 @@ export function Contact() {
           submittedAt: new Date().toISOString(),
           locale: 'en',
           source: 'tommyhq.com',
+          company_url: honeypot,
         }),
       });
 
@@ -164,6 +176,20 @@ export function Contact() {
               onSubmit={handleSubmit}
               className="w-full bg-brand-bg border border-brand-border rounded-[16px] p-6 md:p-10 mb-10 text-left"
             >
+              {/* Honeypot: hidden from people, only bots fill it. Do not remove. */}
+              <div aria-hidden="true" style={{ position: 'absolute', left: '-9999px', width: '1px', height: '1px', overflow: 'hidden' }}>
+                <label htmlFor="company_url">Do not fill this field</label>
+                <input
+                  id="company_url"
+                  name="company_url"
+                  type="text"
+                  tabIndex={-1}
+                  autoComplete="off"
+                  value={honeypot}
+                  onChange={(e) => setHoneypot(e.target.value)}
+                />
+              </div>
+
               <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
                 <Field label="First name" required>
                   <input type="text" required value={form.firstName} onChange={update('firstName')} placeholder="Jane" className={inputClass} />
