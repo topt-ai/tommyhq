@@ -6,6 +6,7 @@ import { Services } from '@/components/en/Services';
 import { AISearch } from '@/components/en/AISearch';
 import { SystemDiagram } from '@/components/en/SystemDiagram';
 import { Work } from '@/components/en/Work';
+import { Projects } from '@/components/en/Projects';
 import { About } from '@/components/en/About';
 import { Process } from '@/components/en/Process';
 import { WhyUs } from '@/components/en/WhyUs';
@@ -24,6 +25,7 @@ export default function Home() {
       <AISearch />
       <SystemDiagram />
       <Work />
+      <Projects />
       <About />
       <Process />
       <WhyUs />

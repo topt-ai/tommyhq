@@ -12,90 +12,45 @@ type Project = {
 
 const PROJECTS: Project[] = [
   {
-    client: 'The Tooth Boutique',
-    tags: ['Sitio web', 'SEO local'],
-    result: 'Top 3 en Google Maps para "ortodoncista san salvador".',
-    img: '/projects/tooth1.png',
-    hoverImg: '/projects/tooth2.png',
-    href: 'https://www.thetoothboutique.com/',
-    cta: 'Ver sitio',
-  },
-  {
-    client: 'Jarvis Real Estate',
-    tags: ['Sitio web', 'Demo'],
-    result: 'Demo para agentes inmobiliarios en El Salvador. Listings y contacto por WhatsApp.',
-    img: '/projects/jarvis1.png',
-    hoverImg: '/projects/jarvis2.png',
-    href: null,
-    cta: null,
-  },
-  {
-    client: 'Bisou Munchies',
-    tags: ['Sitio web'],
-    result: 'Sitio para marca de postres en Nicaragua.',
-    img: '/projects/bisoutuweb.webp',
-    hoverImg: null,
-    href: 'https://bisoumunchies.com/',
-    cta: 'Ver sitio',
-  },
-  {
-    client: 'Top Google Places',
-    tags: ['SEO local'],
-    result: 'The Tooth Boutique entre las primeras opciones al buscar clínicas de ortodoncia en San Salvador.',
-    img: '/projects/project_mapstooth.png',
-    hoverImg: null,
-    href: null,
-    cta: null,
-  },
-  {
-    client: 'VOID',
-    tags: ['Sitio web', 'Marca'],
-    result: 'Agencia de marketing y desempeño.',
-    img: '/projects/project_void2.png',
-    hoverImg: null,
-    href: null,
-    cta: null,
-  },
-  {
     client: 'Descent',
-    tags: ['Demo', 'Interactivo'],
-    result: 'Experiencia cinemática de una ciudad, guiada por scroll. Pura atmósfera y movimiento.',
+    tags: ['Demo', 'Interactive'],
+    result: 'A cinematic, scroll-driven cityscape. Pure atmosphere and motion, built for feel.',
     img: '/projects/descent.png',
     hoverImg: null,
     href: 'https://descent-lemon.vercel.app/',
-    cta: 'Ver demo',
+    cta: 'View demo',
   },
   {
     client: 'Unfazed',
     tags: ['Demo', 'WebGL'],
-    result: 'Pieza interactiva de partículas que reacciona a tu movimiento.',
+    result: 'An interactive particle piece that reacts as you move through it.',
     img: '/projects/unfazed.png',
     hoverImg: null,
     href: 'https://unfazed-particles.vercel.app/',
-    cta: 'Ver demo',
+    cta: 'View demo',
   },
   {
     client: 'Ronin & Son',
-    tags: ['Demo', 'Scroll'],
-    result: 'Historia en cinco capítulos sobre forjar una katana a mano.',
+    tags: ['Demo', 'Scroll story'],
+    result: 'A five-chapter scrollytelling story on forging a katana by hand.',
     img: '/projects/katana.png',
     hoverImg: null,
     href: 'https://ronin-son.vercel.app/',
-    cta: 'Ver demo',
+    cta: 'View demo',
   },
 ];
 
-export function ProjectsES() {
+export function Projects() {
   return (
-    <section id="proyectos" className="bg-brand-bg py-[120px] border-t border-brand-border">
+    <section id="projects" className="bg-brand-bg py-[120px] border-t border-brand-border">
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12">
 
         <div className="mb-12 GSAP-reveal" data-reveal>
           <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-brand-accent mb-4">
-            Proyectos
+            Projects
           </div>
           <h2 className="font-display font-normal text-brand-primary text-[36px] md:text-[52px] leading-tight">
-            Resultados.
+            A few things we&apos;ve built.
           </h2>
         </div>
 
@@ -139,7 +94,7 @@ export function ProjectsES() {
                     {p.cta} →
                   </a>
                 ) : (
-                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-muted">Caso interno</span>
+                  <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-brand-muted">Internal case</span>
                 )}
               </div>
             </div>
