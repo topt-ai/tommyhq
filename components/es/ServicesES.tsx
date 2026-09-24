@@ -111,9 +111,9 @@ export function ServicesES() {
             data-reveal
           >
             <div className="font-mono text-[11px] text-brand-muted mb-4">02</div>
-            <h3 className="font-display text-[36px] text-brand-primary mb-4">Sitios Web</h3>
+            <h3 className="font-display text-[36px] text-brand-primary mb-4">Sitios Web y Apps</h3>
             <p className="font-sans font-light text-[16px] text-brand-muted leading-[1.7] mb-8">
-              Sitios a la medida que se ven serios, cargan rápido y aparecen en Google. Sin plantillas. Desde landing pages hasta apps completas con base de datos, logins y dashboards.
+              Sitios y apps a la medida que se ven serios, cargan rápido y aparecen en Google. Sin plantillas. Desde landing pages hasta apps completas con base de datos, logins y dashboards.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-10">

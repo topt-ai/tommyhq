@@ -55,7 +55,7 @@ export function HeroES() {
       <div className="w-full max-w-[1200px] mx-auto px-6 md:px-12 relative z-10 flex items-center justify-between">
         <div className="max-w-[640px] GSAP-reveal" data-reveal>
           <div className="font-mono text-[11px] uppercase tracking-[0.15em] text-brand-accent mb-6">
-            Sitios web &nbsp;&middot;&nbsp; SEO local &nbsp;&middot;&nbsp; Automatizaciones
+            Sitios web &amp; Apps &nbsp;&middot;&nbsp; SEO local &nbsp;&middot;&nbsp; Automatizaciones
           </div>
 
           <h1

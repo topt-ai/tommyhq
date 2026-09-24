@@ -111,9 +111,9 @@ export function Services() {
             data-reveal
           >
             <div className="font-mono text-[11px] text-brand-muted mb-4">02</div>
-            <h3 className="font-display text-[36px] text-brand-primary mb-4">Websites</h3>
+            <h3 className="font-display text-[36px] text-brand-primary mb-4">Websites &amp; Apps</h3>
             <p className="font-sans font-light text-[16px] text-brand-muted leading-[1.7] mb-8">
-              Custom-built sites that look serious, load fast, and show up on Google. No templates. From landing pages to full-stack apps with databases, logins, and dashboards.
+              Custom-built sites and apps that look serious, load fast, and show up on Google. No templates. From landing pages to full-stack web apps with databases, logins, and dashboards.
             </p>
 
             <div className="flex flex-wrap gap-2 mb-10">
